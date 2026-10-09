@@ -8,18 +8,18 @@
 
 ## Solution
 
-在桌面侧栏「内容」分组的最后加一个「官方博客」入口，打开 `/blogs`：一张按天分组、按时间倒序的列表，只列 23 家公司官方工程博客的文章。每行显示机构图标、文章原标题、机构名和时间，点开直接去原文。工具栏有「只看热议」开关（被其他来源跟进报道的文章）和按机构多选的筛选器。文章被本站精选过的，行内有「精选」标记，点它进入本站的中文解读页。手机上从「我的」页进入，筛选器改成底部弹出的面板。
+在桌面侧栏「内容」分组的最上方加一个「官方博客」入口，打开 `/blogs`：一张按天分组、按时间倒序的列表，只列 22 家公司官方工程博客的文章。每行显示机构图标、文章原标题、机构名和时间，点开直接去原文。工具栏有「只看热议」开关（被其他来源跟进报道的文章）和按机构多选的筛选器。文章被本站精选过的，行内有「精选」标记，点它进入本站的中文解读页。手机上从「我的」页进入，筛选器改成底部弹出的面板。
 
-这 23 家博客作为普通信源接入，照常经过模型分析：与 AI 相关的文章照旧进入精选和全部动态，并参与归组和热度；博客页本身不看模型的判定结果，全部展示。
+这 22 家博客作为普通信源接入，照常经过模型分析：与 AI 相关的文章照旧进入精选和全部动态，并参与归组和热度；博客页本身不看模型的判定结果，全部展示。
 
-收录的机构（与 techxiv.dev 一致）：Amazon、Anthropic、Cloudflare、Cursor、Datadog、DeepMind、Discord、Dropbox、Figma、Fly.io、GitHub、Jane Street、LinkedIn、Meta、Netflix、Notion、OpenAI、Shopify、Slack、Spotify、Stripe、Uber、Vercel。
+收录的机构（techxiv.dev 的名单，去掉连不上的 Discord）：Amazon、Anthropic、Cloudflare、Cursor、Datadog、DeepMind、Dropbox、Figma、Fly.io、GitHub、Jane Street、LinkedIn、Meta、Netflix、Notion、OpenAI、Shopify、Slack、Spotify、Stripe、Uber、Vercel。
 
 ## User Stories
 
 1. As a 读者, I want a「官方博客」entry in the desktop sidebar under「内容」, so that I can find the page without knowing its address.
 2. As a 读者, I want the entry to sit first in「内容」, above「精选」, and look like the other sidebar entries, so that it feels like part of the site.
 3. As a 手机读者, I want to reach the page from the「我的」page, so that I can use it without the desktop sidebar.
-4. As a 读者, I want the page to list articles from the 23 companies' official engineering blogs only, so that media reports and social posts don't dilute it.
+4. As a 读者, I want the page to list articles from the 22 companies' official engineering blogs only, so that media reports and social posts don't dilute it.
 5. As a 读者, I want articles newest first, so that I see what was published recently.
 6. As a 读者, I want articles grouped by day with「今天」「昨天」and dated headings, so that I can tell how fresh each one is.
 7. As a 读者, I want each day heading to show the weekday and the number of articles that day, so that I can skim the rhythm of publishing.
@@ -47,7 +47,7 @@
 29. As a 读者, I want articles to appear soon after the blog publishes them, so that the page is current.
 30. As a 读者, I want the page to load fast and be cacheable, so that it feels like the other list pages.
 31. As a 搜索引擎, I want the page to have a proper title, description and canonical address, so that it can be indexed like the site's other lists.
-32. As a 站长, I want the 23 blogs configured as ordinary sources, so that I can pause, edit or add one in the admin like any other source.
+32. As a 站长, I want the 22 blogs configured as ordinary sources, so that I can pause, edit or add one in the admin like any other source.
 33. As a 站长, I want the blogs page to be driven by a source tag, so that adding a blog later only means creating a source with that tag (and, optionally, an icon mapping).
 34. As a 站长, I want AI-relevant posts from these blogs to keep entering 精选 and 全部动态, so that the main feed still benefits from them.
 35. As a 站长, I want no extra paid calls beyond the normal per-article analysis, so that the feature stays cheap.
@@ -58,7 +58,7 @@
 ## Implementation Decisions
 
 - **Shape**: a new site module `@aihot/blogs` under the modules directory, listed in the site's three module lists (addresses, server, web) and in the site package's dependencies (and the Dockerfile copy line). No framework code changes; if a needed socket is missing, add a general socket rather than special-casing blogs.
-- **Sources**: 23 sources added to the industry's seed sources, all `participation_mode: editorial`, `tier: T1`, tagged `工程博客`, `site_fulltext` and `syndicate_fulltext` off. OpenAI News and Google DeepMind already exist and only gain the tag. 15 are RSS (Vercel limited to `/blog/` by URL prefix; Datadog and GitHub use their engineering feeds). 8 use `web_list` against the engineering list page: Anthropic, Cursor, Discord, Figma, LinkedIn, Notion, Uber; Anthropic, Discord, Notion and Uber fill missing dates from the detail page, LinkedIn takes its title from the detail page because list titles are truncated. RSS polls every 180 minutes, list pages every 360. Selectors were checked against live pages with the project's list parser on 2026-10-09; they must be checked again with 预览抓取 when the sources are created. `owner_entity_id` is set only where the entity exists in the taxonomy (amazon, anthropic, cursor, meta, openai, google).
+- **Sources**: 22 sources added to the industry's seed sources, all `participation_mode: editorial`, `tier: T1`, tagged `工程博客`, `site_fulltext` and `syndicate_fulltext` off. OpenAI News and Google DeepMind already exist and only gain the tag. 15 are RSS (Vercel limited to `/blog/` by URL prefix; Datadog and GitHub use their engineering feeds). 6 use `web_list` against the engineering list page: Anthropic, Cursor, Figma, LinkedIn, Notion, Uber; Anthropic, Notion and Uber fill missing dates from the detail page, LinkedIn takes its title from the detail page because list titles are truncated. RSS polls every 180 minutes, list pages every 360. Selectors were checked against live pages with the project's list parser on 2026-10-09; they must be checked again with 预览抓取 when the sources are created. `owner_entity_id` is set only where the entity exists in the taxonomy (amazon, anthropic, cursor, meta, openai, google).
 - **Organizations**: the module owns a fixed map from source id to organization `{ key, name, icon }`. The blogs page groups and filters by this organization key, not by `owner_entity_id`, because most of these companies are outside the AI taxonomy.
 - **Icons**: LobeHub Icons (`@lobehub/icons-static-svg`, MIT), bundled into the module for the 11 companies it covers: Amazon (aws), Anthropic, Cloudflare, Cursor, DeepMind, Figma, GitHub, Meta, Notion, OpenAI, Vercel. Colour variants where they exist, mono marks take the ink colour so they follow the theme. The other 12 fall back to the source's collected icon, then to the site's tinted-initial avatar. Icons sit on a quiet tile; no ring or colour border for 精选 or 热议.
 - **Which articles are listed**: every article from a `工程博客`-tagged source that has a public publication row and is released, regardless of relevance, eligibility or selection. Articles still waiting for analysis are not listed yet. Withdrawn articles and articles blocked by the safety boundary are never listed. The public-scope predicates come from the publication read layer's scope module, never re-spelled in the module.
@@ -105,7 +105,7 @@
 ## Further Notes
 
 - Selectors for Uber and Figma depend on generated class names or test ids and may break on redesign; source health alerts are the safety net.
-- Discord's detail date is written like「Jun 11, 2026」in JSON-LD; confirm it parses with 预览抓取 before enabling the source.
+- Discord was dropped: discord.com is not reachable from the collector without an egress proxy.
 - Stripe only has a whole-blog feed, so product announcements will appear too.
 - Cursor's list page only exposes its latest few posts; older ones won't be backfilled.
 - Brand icons are trademarks used to identify the source of each article.

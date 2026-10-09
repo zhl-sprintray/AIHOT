@@ -19,7 +19,6 @@ export const BLOG_ORGS: readonly BlogOrg[] = [
   { key: "cursor", name: "Cursor", icon: "cursor", sources: ["web-cursor-blog"] },
   { key: "datadog", name: "Datadog", icon: null, sources: ["rss-datadog-engineering"] },
   { key: "deepmind", name: "DeepMind", icon: "deepmind-color", sources: ["rss-google-deepmind"] },
-  { key: "discord", name: "Discord", icon: null, sources: ["web-discord-engineering"] },
   { key: "dropbox", name: "Dropbox", icon: null, sources: ["rss-dropbox-tech"] },
   { key: "figma", name: "Figma", icon: "figma-color", sources: ["web-figma-engineering"] },
   { key: "flyio", name: "Fly.io", icon: null, sources: ["rss-fly-io"] },

@@ -489,35 +489,6 @@
       "interval_minutes": 180
     },
     {
-      "id": "web-discord-engineering",
-      "name": "Discord Engineering",
-      "kind": "web_list",
-      "config": {
-        "url": "https://discord.com/category/engineering",
-        "itemSelector": ".w-dyn-item",
-        "linkSelector": "a.cms_article",
-        "titleSelector": ".text-style-3lines",
-        "allowUrlPrefixes": [
-          "https://discord.com/blog/"
-        ],
-        "detail": {
-          "publishedAtSelector": "script[type='application/ld+json']"
-        },
-        "_aihot": {
-          "initialBackfillLimit": 8
-        }
-      },
-      "tier": "T1",
-      "participation_mode": "editorial",
-      "tags": [
-        "工程博客"
-      ],
-      "site_fulltext": false,
-      "syndicate_fulltext": false,
-      "owner_entity_id": null,
-      "interval_minutes": 360
-    },
-    {
       "id": "rss-dropbox-tech",
       "name": "Dropbox Tech",
       "kind": "rss",
