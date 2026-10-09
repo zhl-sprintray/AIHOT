@@ -42,7 +42,7 @@ const SECTIONS: Array<{ title: string; items: NavItem[] }> = [
 
 /**
  * The sidebar: the engine's sections with the modules' between 内容 and 更多; a module naming a section
- * that is already there adds to it.
+ * that is already there adds to its end, or its top with `first`.
  */
 export function sidebar(): Array<{ title: string; items: NavItem[] }> {
   const [content, ...rest] = SECTIONS;
@@ -51,7 +51,7 @@ export function sidebar(): Array<{ title: string; items: NavItem[] }> {
   for (const m of webModules()) {
     if (!m.sidebar) continue;
     const section = sections.find((s) => s.title === m.sidebar!.section);
-    if (section) section.items.push(...m.sidebar.items);
+    if (section) section.items[m.sidebar.first ? "unshift" : "push"](...m.sidebar.items);
     else sections.push({ title: m.sidebar.section, items: [...m.sidebar.items] });
   }
   return [...sections, more];

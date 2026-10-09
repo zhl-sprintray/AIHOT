@@ -17,7 +17,7 @@
 ## User Stories
 
 1. As a 读者, I want a「官方博客」entry in the desktop sidebar under「内容」, so that I can find the page without knowing its address.
-2. As a 读者, I want the entry to sit after「收藏」and look like the other sidebar entries, so that it feels like part of the site.
+2. As a 读者, I want the entry to sit first in「内容」, above「精选」, and look like the other sidebar entries, so that it feels like part of the site.
 3. As a 手机读者, I want to reach the page from the「我的」page, so that I can use it without the desktop sidebar.
 4. As a 读者, I want the page to list articles from the 23 companies' official engineering blogs only, so that media reports and social posts don't dilute it.
 5. As a 读者, I want articles newest first, so that I see what was published recently.
@@ -70,7 +70,7 @@
   - Answer: `{ items: [{ id, title, url, publishedAt, org, selected, itemPath | null, reportCount }], orgs: [{ key, name, icon, iconUrl, count }], nextCursor | null, updatedAt }`. `orgs` lists the configured organizations that have a tagged source (then any other tagged source under its public name), on the first page only, with its count under the current 热议 filter and ignoring the company filter, so the picker can show counts. `icon` names a bundled LobeHub icon; `iconUrl` is the source's own icon (proxied) for a company without one.
   - Ordered by timeline time descending with a stable tiebreak; cursor pagination like the existing timeline.
   - Cache: public, 60 s, with an ETag, matching the site's other list endpoints.
-- **Web**: a `/blogs` page registered by the module, using the site's shell, tokens and components (card, badge, kicker header, pill toggles, sheet on phones, site avatar fallback). Sidebar item via the module's `sidebar` socket in section「内容」; on phones an entry on the「我的」page. Filters live in the query string and are read by the loader; the page talks to the API only over HTTP. Day grouping uses Beijing time. Page meta: title「官方博客」, a description, canonical without cursor.
+- **Web**: a `/blogs` page registered by the module, using the site's shell, tokens and components (card, badge, kicker header, pill toggles, sheet on phones, site avatar fallback). Sidebar item via the module's `sidebar` socket at the top of section「内容」(the socket's `first` option); on phones an entry on the「我的」page. Filters live in the query string and are read by the loader; the page talks to the API only over HTTP. Day grouping uses Beijing time. Page meta: title「官方博客」, a description, canonical without cursor.
 - **Visual reference**: the approved mockup (desktop + phone, light + dark): kicker「一手来源」, title, one-line lede, a stamp with organization count and update time; toolbar with「只看热议」, chosen-company chips and the stacked-avatar company picker; day-grouped cards; empty state「没有符合条件的文章」.
 - **No schema change**: the query is served by existing publication and source columns; add an index only if the query plan on real data shows a need, following the online-migration rules.
 

@@ -1,4 +1,4 @@
-// The blogs module on the web: its entry in the sidebar's 内容 section and on the phone's 我的 page.
+// The blogs module on the web: its entry at the top of the sidebar's 内容 section and on the phone's 我的 page.
 import type { WebModule } from "@aihot/web/modules";
 
 /** A newspaper page: the companies' own blogs. */
@@ -14,6 +14,6 @@ export function IconBlogs({ size = 18 }: { size?: number }) {
 
 export const blogsWeb: WebModule = {
   name: "blogs",
-  sidebar: { section: "内容", items: [{ to: "/blogs", label: "官方博客", icon: IconBlogs }] },
+  sidebar: { section: "内容", first: true, items: [{ to: "/blogs", label: "官方博客", icon: IconBlogs }] },
   tools: [{ to: "/blogs", label: "官方博客", icon: <IconBlogs size={20} /> }],
 };
