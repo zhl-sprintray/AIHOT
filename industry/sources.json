@@ -443,7 +443,7 @@
       "name": "Cursor Blog",
       "kind": "web_list",
       "config": {
-        "url": "https://cursor.com/blog",
+        "url": "https://cursor.com/en-US/blog",
         "itemSelector": "article",
         "linkSelector": "a",
         "titleSelector": "h2, h3, p",
