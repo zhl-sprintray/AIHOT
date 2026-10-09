@@ -116,8 +116,11 @@ export interface TopicPagePart {
 export interface WebModule {
   /** Its folder under modules/. */
   name: string;
-  /** Desktop sidebar: entries in a section between the engine's 内容 and 更多; modules naming the same section share it. */
-  sidebar?: { section: string; items: NavItem[] };
+  /**
+   * Desktop sidebar: entries in a section between the engine's 内容 and 更多; modules naming the same section share it.
+   * `first` puts them at the top of a section that is already there instead of the end.
+   */
+  sidebar?: { section: string; items: NavItem[]; first?: boolean };
   /** Phone tab bar: tabs before 我的. */
   tabs?: Tab[];
   /** The 我的 page: rows ahead of the engine's tools. */

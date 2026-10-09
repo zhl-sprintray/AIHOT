@@ -16,7 +16,8 @@
       "participation_mode": "editorial",
       "interval_minutes": 120,
       "tags": [
-        "官方"
+        "官方",
+        "工程博客"
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
@@ -36,7 +37,8 @@
       "participation_mode": "editorial",
       "interval_minutes": 120,
       "tags": [
-        "官方"
+        "官方",
+        "工程博客"
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
@@ -365,6 +367,471 @@
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-amazon-science",
+      "name": "Amazon Science",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://www.amazon.science/index.rss",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": "amazon",
+      "interval_minutes": 180
+    },
+    {
+      "id": "web-anthropic-engineering",
+      "name": "Anthropic Engineering",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.anthropic.com/engineering",
+        "itemSelector": "article",
+        "linkSelector": "a",
+        "titleSelector": "h3, h2",
+        "publishedAtSelector": "time",
+        "allowUrlPrefixes": [
+          "https://www.anthropic.com/engineering/"
+        ],
+        "detail": {
+          "publishedAtSelector": "meta[property='article:published_time']"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": "anthropic",
+      "interval_minutes": 360
+    },
+    {
+      "id": "rss-cloudflare-blog",
+      "name": "Cloudflare Blog",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://blog.cloudflare.com/rss/",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 180
+    },
+    {
+      "id": "web-cursor-blog",
+      "name": "Cursor Blog",
+      "kind": "web_list",
+      "config": {
+        "url": "https://cursor.com/en-US/blog",
+        "itemSelector": "article",
+        "linkSelector": "a",
+        "titleSelector": "h2, h3, p",
+        "publishedAtSelector": "time",
+        "allowUrlPrefixes": [
+          "https://cursor.com/blog/"
+        ],
+        "denyUrlPrefixes": [
+          "https://cursor.com/blog/topic/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": "cursor",
+      "interval_minutes": 360
+    },
+    {
+      "id": "rss-datadog-engineering",
+      "name": "Datadog Engineering",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://www.datadoghq.com/blog/engineering/index.xml",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 180
+    },
+    {
+      "id": "rss-dropbox-tech",
+      "name": "Dropbox Tech",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://dropbox.tech/feed",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 180
+    },
+    {
+      "id": "web-figma-engineering",
+      "name": "Figma Engineering",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.figma.com/blog/engineering/",
+        "itemSelector": "article",
+        "linkSelector": "a",
+        "titleSelector": "h3",
+        "publishedAtSelector": "time",
+        "publishedAtUtcOffset": "+00:00",
+        "allowUrlPrefixes": [
+          "https://www.figma.com/blog/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 360
+    },
+    {
+      "id": "rss-fly-io",
+      "name": "Fly.io Blog",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://fly.io/blog/feed.xml",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 180
+    },
+    {
+      "id": "rss-github-engineering",
+      "name": "GitHub Engineering",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://github.blog/engineering/feed/",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 180
+    },
+    {
+      "id": "rss-jane-street",
+      "name": "Jane Street Tech Blog",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://blog.janestreet.com/feed.xml",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 180
+    },
+    {
+      "id": "web-linkedin-engineering",
+      "name": "LinkedIn Engineering",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.linkedin.com/blog/engineering",
+        "itemSelector": "li.grid-post",
+        "linkSelector": "a.grid-post__link",
+        "titleSelector": "a.grid-post__link",
+        "publishedAtSelector": ".grid-post__date",
+        "publishedAtUtcOffset": "+00:00",
+        "allowUrlPrefixes": [
+          "https://www.linkedin.com/blog/engineering/"
+        ],
+        "detail": {
+          "titleSelector": "h1",
+          "titleAuthoritative": true
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 360
+    },
+    {
+      "id": "rss-meta-engineering",
+      "name": "Engineering at Meta",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://engineering.fb.com/feed/",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": "meta",
+      "interval_minutes": 180
+    },
+    {
+      "id": "rss-netflix-tech",
+      "name": "Netflix TechBlog",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://netflixtechblog.com/feed",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 180
+    },
+    {
+      "id": "web-notion-tech",
+      "name": "Notion Tech",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.notion.com/blog/topic/tech",
+        "itemSelector": "article.post-preview",
+        "linkSelector": "a[title]",
+        "titleSelector": "h3, h2, a[title]",
+        "allowUrlPrefixes": [
+          "https://www.notion.com/blog/"
+        ],
+        "denyUrlPrefixes": [
+          "https://www.notion.com/blog/topic/"
+        ],
+        "detail": {
+          "publishedAtSelector": "time"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 360
+    },
+    {
+      "id": "rss-shopify-engineering",
+      "name": "Shopify Engineering",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://shopify.engineering/blog.atom",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 180
+    },
+    {
+      "id": "rss-slack-engineering",
+      "name": "Slack Engineering",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://slack.engineering/feed/",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 180
+    },
+    {
+      "id": "rss-spotify-engineering",
+      "name": "Spotify Engineering",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://engineering.atspotify.com/feed/",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 180
+    },
+    {
+      "id": "rss-stripe-blog",
+      "name": "Stripe Blog",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://stripe.com/blog/feed.rss",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 180
+    },
+    {
+      "id": "web-uber-engineering",
+      "name": "Uber Engineering",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.uber.com/en-US/blog/engineering/",
+        "itemSelector": "[data-testid='newsroom-article-feed-card']",
+        "linkSelector": "a[href*='/blog/']:not([aria-hidden])",
+        "titleSelector": "a[href*='/blog/']:not([aria-hidden])",
+        "allowUrlPrefixes": [
+          "https://www.uber.com/us/en/blog/"
+        ],
+        "detail": {
+          "publishedAtSelector": "[data-baseweb='typo-labellarge']",
+          "publishedAtUtcOffset": "+00:00"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 360
+    },
+    {
+      "id": "rss-vercel-blog",
+      "name": "Vercel Blog",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://vercel.com/atom",
+        "allowUrlPrefixes": [
+          "https://vercel.com/blog/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "tags": [
+        "工程博客"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": null,
+      "interval_minutes": 180
     }
   ]
 }
